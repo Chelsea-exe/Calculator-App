@@ -1,0 +1,18 @@
+body {
+    font-family: "open sans", "sans-serif";
+    background-color: rgb(255, 232, 169);
+}
+#background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.082), rgba(0, 0, 0, 0.041)), url("./images/purple-square-yellow-circle-orange-triangle.jpg");
+    background-repeat: no-repeat;
+    background-size: 200vh;
+    margin: 100px 0 0 50px;
+    /* width: 1000px;
+    height: 550px; */
+}
+
+#calc-container {
+    width: 320px;
+    height: 520px;
+    background-color: azure;
+}
