@@ -3,9 +3,9 @@ body {
     background-color: rgb(255, 232, 169);
 }
 #background {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.082), rgba(0, 0, 0, 0.041)), url("./images/purple-square-yellow-circle-orange-triangle.jpg");
+    background-image: linear-gradient(rgba(122, 122, 122, 0.082), rgba(0, 0, 0, 0.041)), url("./images/purple-square-yellow-circle-orange-triangle.jpg");
     background-repeat: no-repeat;
-    background-size: 200vh;
+    background-size: 140vh 50vw;
     margin: 100px 0 0 50px;
     /* width: 1000px;
     height: 550px; */
@@ -13,6 +13,8 @@ body {
 
 #calc-container {
     width: 320px;
-    height: 520px;
-    background-color: azure;
+    height: 510px;
+    margin-left: 350px;
+    background-color: rgb(250, 223, 234);
+    border-radius: 18px;
 }
