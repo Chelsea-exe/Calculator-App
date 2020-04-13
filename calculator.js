@@ -27,7 +27,7 @@ $(document).ready(function() {
     function getOutput () {
         return document.getElementById("output-value").innerText;
     }
-    function printOutput () {
+    function printOutput (num) {
         if (num == "") {
             return document.getElementById("output-value").innerText=num;
 
@@ -36,24 +36,30 @@ $(document).ready(function() {
             document.getElementById("output-value").innerText=getFormattedNumber(num);
         }
     }
-    function getNumber (num) {
+    function getFormattedNumber (num) {
         var n = Number(num);
         var value = n.toLocaleString("en");
         return value;
     }
+    printOutput("77777");
     function addCommas (num) {
         return Number(num.replace(/,/g, ''));
     }
     var operator = $(".operator");
     for (var i = 0; i < operator.length; i++) {
         operator[i].addEventListener('click', function() {
-            alert("operator was clicked!!" + this.id);
+            // alert("operator was clicked!!" + this.id);
         })
     }
     var number = $(".number");
     for (var i = 0; i < number.length; i++) {
         number[i].addEventListener('click', function() {
-            alert("number was clicked!!" + this.id);
+            // alert("number was clicked!!" + this.id);
+            var output = getNumber(getOutput());
+            if (output != NaN){
+                output = output + this.id;
+                printOutput(output);
+            }
         })
     }
 });
