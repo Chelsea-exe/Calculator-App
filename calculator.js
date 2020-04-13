@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
     // alert("page is ready!");
     
     //created variables for the numbers, operators & result.
@@ -21,15 +21,15 @@ $(document).ready(function() {
     function getHistory () {
         return document.getElementById("history-value").innerText;
     }
-    function printHistory () {
-        return document.getElementById("history-value").innerText=num;
+    function printHistory(num) {
+        document.getElementById("history-value").innerText=num;
     }
     function getOutput () {
         return document.getElementById("output-value").innerText;
     }
-    function printOutput (num) {
+    function printOutput(num) {
         if (num == "") {
-            return document.getElementById("output-value").innerText=num;
+             document.getElementById("output-value").innerText=num;
 
         }
         else {
@@ -37,6 +37,9 @@ $(document).ready(function() {
         }
     }
     function getFormattedNumber (num) {
+        if (num == "-") {
+            return "";
+        }
         var n = Number(num);
         var value = n.toLocaleString("en");
         return value;
@@ -46,21 +49,24 @@ $(document).ready(function() {
         return Number(num.replace(/,/g, ''));
     }
     // alert(reverseNumberFormat(getOutput()));
-    var operator = $(".operator");
+    var operator = document.getElementsByClassName("operator")
     for (var i = 0; i < operator.length; i++) {
         operator[i].addEventListener('click', function() {
             // alert("operator was clicked!!" + this.id);
-        })
+            if (this.id == "clear") {
+                printHistory("");
+                printOutput("");
+            }
+        });
     }
-    var number = $(".number");
+    var number = document.getElementsByClassName("number");
     for (var i = 0; i < number.length; i++) {
         number[i].addEventListener('click', function() {
             // alert("number was clicked!!" + this.id);
-            var output = getNumber(getOutput());
+            var output = reverseNumberFormat(getOutput());
             if (output != NaN){
                 output = output + this.id;
                 printOutput(output);
             }
         })
     }
-});
