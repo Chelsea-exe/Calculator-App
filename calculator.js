@@ -28,6 +28,32 @@ $(document).ready(function() {
         return document.getElementById("output-value").innerText;
     }
     function printOutput () {
-        return document.getElementById("output-value").innerText=num;
+        if (num == "") {
+            return document.getElementById("output-value").innerText=num;
+
+        }
+        else {
+            document.getElementById("output-value").innerText=getFormattedNumber(num);
+        }
+    }
+    function getNumber (num) {
+        var n = Number(num);
+        var value = n.toLocaleString("en");
+        return value;
+    }
+    function addCommas (num) {
+        return Number(num.replace(/,/g, ''));
+    }
+    var operator = $(".operator");
+    for (var i = 0; i < operator.length; i++) {
+        operator[i].addEventListener('click', function() {
+            alert("operator was clicked!!" + this.id);
+        })
+    }
+    var number = $(".number");
+    for (var i = 0; i < number.length; i++) {
+        number[i].addEventListener('click', function() {
+            alert("number was clicked!!" + this.id);
+        })
     }
 });
