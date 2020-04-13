@@ -41,10 +41,11 @@ $(document).ready(function() {
         var value = n.toLocaleString("en");
         return value;
     }
-    printOutput("77777");
-    function addCommas (num) {
+    // printOutput("77777");
+    function reverseNumberFormat (num) {
         return Number(num.replace(/,/g, ''));
     }
+    // alert(reverseNumberFormat(getOutput()));
     var operator = $(".operator");
     for (var i = 0; i < operator.length; i++) {
         operator[i].addEventListener('click', function() {
