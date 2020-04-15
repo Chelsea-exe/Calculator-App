@@ -1,15 +1,40 @@
 $(document).ready(function() {
 
     // alert("page is ready!");
-    
-    $('button').on('click', function(e) {
-        console.log('e', e.target.innerHTML);
-    });
+
+
+
+    // function displayButton(button) {
+    //     $()
+    // }
     //created variables for the numbers, operators & result.
     var num1 = "";
     var num2 = "";
     var operator = "";
-    var equalCalculation = "";
+    var total = "";
+
+    function handleNumber(num) {
+        if (num1 === '') {
+            num1 = num;
+        }
+        else {
+            num2 = num;
+        }
+        displayButton(num);
+    }
+
+    $('button').on('click', function(e) {
+        var button = e.target.innerHTML;
+        if (button >= '0' && button <= '9') {
+            handleNumber(button)
+            console.log('number');
+        }
+        else {
+            handleOperator(button)
+            console.log('operator')
+        }
+        // console.log('e', e.target.innerHTML);
+    });
 
     // function handleNumber(num) {
     //     if (num === '') {
@@ -19,6 +44,7 @@ $(document).ready(function() {
     //         }
     //     }
     // }
+
     //resetCalculator function reset calculator when user presses the "clear" button.
 
 
