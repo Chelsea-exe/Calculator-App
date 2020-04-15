@@ -23,6 +23,17 @@ $(document).ready(function() {
         displayButton(num);
     }
 
+    function handleOperator(oper) {
+        if (operator === '') {
+            operator = oper;
+        }
+        else {
+            handleTotal();
+            operator = oper;
+        }
+    }
+
+
     $('button').on('click', function(e) {
         var button = e.target.innerHTML;
         if (button >= '0' && button <= '9') {
