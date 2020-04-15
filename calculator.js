@@ -33,6 +33,13 @@ $(document).ready(function() {
         }
     }
 
+    function handleTotal () {
+        switch (operator) {
+            case '+':
+                total = +num1 + +num2;
+        }
+
+    }
 
     $('button').on('click', function(e) {
         var button = e.target.innerHTML;
@@ -46,6 +53,15 @@ $(document).ready(function() {
         }
         // console.log('e', e.target.innerHTML);
     });
+
+    function displayButton(button) {
+        $('#output-value').text(button);
+    }
+
+    function updateVariables() {
+        num1 = total;
+        num2 = '';
+    }
 
     // function handleNumber(num) {
     //     if (num === '') {
