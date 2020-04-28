@@ -5,7 +5,7 @@ let total = '';
 
 $(document).ready(function() {
 
-    alert("page is ready!");
+    alert("Welcome to the Calculator App!");
 
 
 
