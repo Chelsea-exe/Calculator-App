@@ -1,6 +1,11 @@
+let num1 = '';
+let num2 = '';
+let operator = '';
+let total = '';
+
 $(document).ready(function() {
 
-    // alert("page is ready!");
+    alert("page is ready!");
 
 
 
@@ -8,10 +13,6 @@ $(document).ready(function() {
     //     $()
     // }
     //created variables for the numbers, operators & result.
-    var num1 = "";
-    var num2 = "";
-    var operator = "";
-    var total = "";
 
     function handleNumber(num) {
         if (num1 === '') {
@@ -47,7 +48,12 @@ $(document).ready(function() {
                 total = +num1 / +num2;
                 displayButton(total);
                 break;
+            case '&#215;':
+                total = +num1 * +num2;
+                displayButton(total);
+                break;
         }
+        updateVariables();
 
     }
 
@@ -62,6 +68,10 @@ $(document).ready(function() {
             console.log('operator')
         }
         // console.log('e', e.target.innerHTML);
+    });
+    
+    $("#clear").click(function () {
+        $("#output").empty();
     });
 
     function displayButton(button) {

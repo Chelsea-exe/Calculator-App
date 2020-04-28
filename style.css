@@ -20,6 +20,9 @@ body {
     height: 550px;
     /* background-size: 120vh; */
 }
+button {
+    color: white;
+}
 #calculator {
     top: 20px;
     position: relative;
@@ -111,6 +114,7 @@ body {
 }
 #equal {
     background-color: rgb(231, 73, 170);
+    width: 128px;
 }
 #equal:hover {
     background-color: rgb(190, 34, 130);
@@ -126,6 +130,9 @@ body {
 }
 #zero {
     width: 128px;
+}
+#clear {
+    width: 207px;
 }
 #clear, #backspace, #percentage {
     background-color: rgb(97, 97, 97);
